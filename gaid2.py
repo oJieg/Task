@@ -13,3 +13,4 @@ print()
 for i in range(3, 5): #перебор от 3 до 4
     print("4= ",i)
 
+#хуй
