@@ -1,5 +1,5 @@
 a=int(input("vvedite datu: "))
-b=a               #b=int(a/4)
-if b == a/4:
+b=a               #
+if b%4==0:
  print(b)
-
+# еще условие тут должно быть там чуть сложнее
