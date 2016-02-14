@@ -29,6 +29,24 @@ def dedreeding(parts_text):
         text+=parts_text[i]
     return text
 
+def generatinKey(parts_text):
+    parts_lon=len(parts_text[0])
+    parts=len(parts_text)
+    key=str(parts)
+
+    for i in range(0, parts):
+        key=key+str(i)
+        for k in range(0, parts_lon):
+            x=random.randint(0, parts-1)
+
+            while x == i:
+                x=random.randint(0, parts-1)
+            key=key+str(x)
+
+        key=key+str(i)
+
+    return key
+
 
 def coding(parts_text, key):
     parts_lon=len(parts_text[0])
