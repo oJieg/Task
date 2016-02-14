@@ -46,7 +46,7 @@ def coding(parts_text, key):
     for i in range(0,parts):
         for k in range(0,parts_lon):
             x=int(key[numb_key])
-            print(x,i,k)
+            print(x)
             #if k == parts_lon-1:k-=1
 
             bufT2 = parts_text[i][k]
