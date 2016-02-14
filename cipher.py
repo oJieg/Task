@@ -19,7 +19,7 @@ def breeding(text, parts):  #делит на равные части
     if len(text_part) !=parts :
         text_part.append("")
         for i in range(0, parts_lon):
-            text_part[parts-1]+=" "
+            text_part[len(text_part)-1]+=" "
 
     
 
@@ -114,6 +114,9 @@ def decoding(parts_text, key):
 
 texting = input("input text")
 lon_parts= int(input("input long part"))
+while lon_parts>9 or lon_parts<0:
+    print("xuinu ne vvodi")
+    lon_parts= int(input("input long part"))
 tx=breeding(texting,lon_parts)
 print("parts vervion ", tx )
 key=generatinKey(tx)
