@@ -69,10 +69,10 @@ def coding(parts_text, key):
 def decoding(parts_text, key):
     parts_lon=len(parts_text[0])
     parts=len(parts_text)
-    numb_key=2
+    numb_key=len(key)-1
 
-    for i in range(0,parts):
-        for k in range(0,parts_lon):
+    for i in range(parts,0,-1):
+        for k in range(parts_lon,0,-1):
             x=int(key[numb_key])
             print(x)
             #if k == parts_lon-1:k-=1
@@ -87,10 +87,10 @@ def decoding(parts_text, key):
             parts_text[i] = buf1
             parts_text[x] = buf2
 
-            numb_key += 1
+            numb_key -= 1
 
 
-        numb_key += 2
+        numb_key -= 2
     print(parts_text)
     return parts_text
 
