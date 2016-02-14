@@ -114,7 +114,7 @@ def decoding(parts_text, key):
 
 texting = input("input text")
 lon_parts= int(input("input long part"))
-while lon_parts>9 or lon_parts<0:
+while lon_parts>9 or lon_parts<2:
     print("xuinu ne vvodi")
     lon_parts= int(input("input long part"))
 tx=breeding(texting,lon_parts)
