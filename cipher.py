@@ -6,9 +6,13 @@ def breeding(text, parts):  #делит на равные части
     text_part = []
     lon=len(text)                             #длинна всего текста
     parts_lon =  math.ceil(lon / parts)       #длинна одной части
-
+    print(parts_lon)
     for i in range(0, lon, parts_lon):
         text_part.append( text[i : i+parts_lon] )
+    if len(text_part) !=parts :
+        text_part.append("")
+        for i in range(0, parts_lon):
+            text_part[parts-1]+=" "
 
     if lon%parts !=0:   #если не по ровну, добавляем пробелы
         x=len(text_part)-1
@@ -46,7 +50,7 @@ def coding(parts_text, key):
     for i in range(0,parts):
         for k in range(0,parts_lon):
             x=int(key[numb_key])
-            print(x)
+           # print(x,i,k)
             #if k == parts_lon-1:k-=1
 
             bufT2 = parts_text[i][k]
@@ -66,15 +70,16 @@ def coding(parts_text, key):
     print(parts_text)
     return parts_text
 
+
 def decoding(parts_text, key):
     parts_lon=len(parts_text[0])
     parts=len(parts_text)
-    numb_key=len(key)-1
+    numb_key=len(key)-2
 
-    for i in range(parts,0,-1):
-        for k in range(parts_lon,0,-1):
+    for i in range(parts-1, -1, -1):
+        for k in range(parts_lon-1, -1, -1):
             x=int(key[numb_key])
-            print(x)
+           # print(x,i,k)
             #if k == parts_lon-1:k-=1
 
             bufT2 = parts_text[i][k]
@@ -93,6 +98,7 @@ def decoding(parts_text, key):
         numb_key -= 2
     print(parts_text)
     return parts_text
+
 
 texting = input()
 tx=breeding(texting,4)
