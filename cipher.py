@@ -6,7 +6,7 @@ def breeding(text, parts):  #делит на равные части
     text_part = []
     lon=len(text)                             #длинна всего текста
     parts_lon =  math.ceil(lon / parts)       #длинна одной части
-    print(parts_lon)
+    #print(parts_lon)
     for i in range(0, lon, parts_lon):
         text_part.append( text[i : i+parts_lon] )
     if len(text_part) !=parts :
@@ -50,6 +50,8 @@ def generatinKey(parts_text):
 
 
 def coding(parts_text, key):
+    
+    
     parts_lon=len(parts_text[0])
     parts=len(parts_text)
     numb_key=2
@@ -107,17 +109,19 @@ def decoding(parts_text, key):
     return parts_text
 
 
-texting = input()
-tx=breeding(texting,4)
-print( tx )
+texting = input("input text")
+lon_parts= int(input("input long part"))
+tx=breeding(texting,lon_parts)
+print("parts vervion ", tx )
 key=generatinKey(tx)
-print(key)
+print("key= ",key)
 cod=coding(tx,key)
 text_cod=dedreeding(cod)
-print(cod)
-print(text_cod)
-cod=breeding(text_cod,4)
-print(cod)
+#print("parts cipher vervion ",cod)
+print("cipher text: ", text_cod)
+cod=breeding(text_cod,lon_parts)
+#print(cod)
 decod=decoding(cod, key)
-print(decod)
-
+#print(decod)
+text_cod=dedreeding(decod)
+print("decipher text: ",text_cod)
