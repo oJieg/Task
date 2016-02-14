@@ -9,16 +9,19 @@ def breeding(text, parts):  #делит на равные части
     #print(parts_lon)
     for i in range(0, lon, parts_lon):
         text_part.append( text[i : i+parts_lon] )
+        
+    if lon%parts !=0:   #если не по ровну, добавляем пробелы
+        x=len(text_part)-1
+        for i in range(len(text_part[0])-len(text_part[x])):
+           # print(i)
+            text_part[x] += " "    
+            
     if len(text_part) !=parts :
         text_part.append("")
         for i in range(0, parts_lon):
             text_part[parts-1]+=" "
 
-    if lon%parts !=0:   #если не по ровну, добавляем пробелы
-        x=len(text_part)-1
-        for i in range(len(text_part[0])-len(text_part[x])):
-           # print(i)
-            text_part[x] += " "
+    
 
     return text_part
 
