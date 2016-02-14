@@ -23,23 +23,11 @@ def breeding(text, parts):  #делит на равные части
     return text_part
 
 
-def generatinKey(parts_text):
-    parts_lon=len(parts_text[0])
-    parts=len(parts_text)
-    key=str(parts)
-
-    for i in range(0, parts):
-        key=key+str(i)
-        for k in range(0, parts_lon):
-            x=random.randint(0, parts-1)
-
-            while x == i:
-                x=random.randint(0, parts-1)
-            key=key+str(x)
-
-        key=key+str(i)
-
-    return key
+def dedreeding(parts_text):
+    text
+    for i in range(0, len(parts_text)):
+        text+=parts_text[i]
+    return text
 
 
 def coding(parts_text, key):
@@ -106,6 +94,10 @@ print( tx )
 key=generatinKey(tx)
 print(key)
 cod=coding(tx,key)
+text_cod=dedreeding(cod)
+print(cod)
+print(text_cod)
+cod=breeding(text_cod)
 print(cod)
 decod=decoding(cod, key)
 print(decod)
