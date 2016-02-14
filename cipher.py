@@ -67,7 +67,7 @@ def coding(parts_text, key):
 
 
         numb_key += 2
-    print(parts_text)
+   # print(parts_text)
     return parts_text
 
 
@@ -96,7 +96,7 @@ def decoding(parts_text, key):
 
 
         numb_key -= 2
-    print(parts_text)
+   # print(parts_text)
     return parts_text
 
 
@@ -106,5 +106,7 @@ print( tx )
 key=generatinKey(tx)
 print(key)
 cod=coding(tx,key)
-decoding(cod, key)
+print(cod)
+decod=decoding(cod, key)
+print(decod)
 
