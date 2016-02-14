@@ -64,6 +64,7 @@ def coding(parts_text, key):
 
         numb_key += 2
     print(parts_text)
+    return parts_text
 
 def decoding(parts_text, key):
     parts_lon=len(parts_text[0])
@@ -80,8 +81,8 @@ def decoding(parts_text, key):
             #if k==0:
              #   buf1=parts_text[x][k] + parts_text[i][k+1:parts_lon]
               #  buf2=bufT1 + parts_text=[x][k+1:parts_lon]
-            buf2=parts_text[i][0:k] + parts_text[x][k] + parts_text[i][k+1:parts_lon]
-            buf1=parts_text[x][0:k] + bufT2 + parts_text[x][k+1:parts_lon]
+            buf1=parts_text[i][0:k] + parts_text[x][k] + parts_text[i][k+1:parts_lon]
+            buf2=parts_text[x][0:k] + bufT2 + parts_text[x][k+1:parts_lon]
 
             parts_text[i] = buf1
             parts_text[x] = buf2
@@ -91,10 +92,13 @@ def decoding(parts_text, key):
 
         numb_key += 2
     print(parts_text)
+    return parts_text
 
 texting = input()
 tx=breeding(texting,4)
 print( tx )
 key=generatinKey(tx)
 print(key)
-coding(tx,key)
+cod=coding(tx,key)
+decoding(cod, key)
+
